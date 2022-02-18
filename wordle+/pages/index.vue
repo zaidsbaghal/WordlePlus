@@ -17,6 +17,8 @@
 export default {
   data() {
     return {
+      dictionary: {},
+      currentWord = "weary", // default word
       matrix: [
         [1, 2, 3, 4, 5],
         [1, 2, 3, 4, 5],
