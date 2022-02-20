@@ -4,29 +4,27 @@
       <h1 class="title">Wordle+</h1>
     </div>
     <div class="matrix">
-      {{ matrix }}
+      <row></row>
+      <row></row>
+      <row></row>
+      <row></row>
+      <row></row>
     </div>
     <div class="footer">
-      <button class="restart-btn">Restart</button>
+      <button class="reset-btn">Reset Board</button>
       <button class="new-word-btn">New Word</button>
     </div>
   </div>
 </template>
 
 <script>
+import row from "../components/row/row.vue";
 export default {
+  components: { row },
   data() {
     return {
       dictionary: {},
-      currentWord = "weary", // default word
-      matrix: [
-        [1, 2, 3, 4, 5],
-        [1, 2, 3, 4, 5],
-        [1, 2, 3, 4, 5],
-        [1, 2, 3, 4, 5],
-        [1, 2, 3, 4, 5],
-        [1, 2, 3, 4, 5],
-      ],
+      currentWord: "", // default word
     };
   },
 };
@@ -48,14 +46,22 @@ export default {
   .matrix {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   .footer {
+    margin: 25px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    .restart-btn {
+      margin: 10px;
+    }
+    .new-word-btn {
+      margin: 10px;
+    }
   }
 }
 </style>
